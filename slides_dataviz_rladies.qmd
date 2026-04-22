@@ -1,0 +1,501 @@
+---
+title: "Visualização de Dados na Prática"
+subtitle: "Bate-papo R-Ladies"
+format:
+  revealjs:
+    theme: serif
+    logo: imagens/logo.png
+    footer: "R-Ladies | Visualização de Dados na Prática"
+    slide-number: true
+    incremental: false
+    transition: fade
+    background-transition: fade
+    preview-links: auto
+    css: styles.css
+    width: 1280
+    height: 720
+---
+
+# Bloco 1 {.center background-color="#d8b5d0"}
+
+## Abertura e contexto
+
+---
+
+## Bem-vindas
+
+**R-Ladies**
+
+Este bate-papo é um espaço de troca sobre visualização de dados na prática.
+
+Não existe receita única. Existe repertório, prática e comunidade.
+
+---
+
+## Convidada: Agatha
+
+- Trajetória profissional e conexão com visualização de dados
+
+- Como a visualização entrou na prática do dia a dia
+
+- O que mudou na forma de trabalhar depois de desenvolver essa habilidade
+
+---
+
+## Por que visualização de dados é uma habilidade essencial
+
+- Dados sem comunicação não geram decisão
+
+- A forma como você apresenta um resultado determina se ele será usado
+
+- Visualização é a ponte entre análise e ação
+
+- Não é sobre estética. É sobre clareza e precisão
+
+::: {.callout-note}
+A visualização de dados apresenta informações densas e complexas em formato gráfico, facilitando comparações e auxiliando na tomada de decisões.
+:::
+
+---
+
+# Bloco 2 {.center background-color="#d8b5d0"}
+
+## Comunidades e aprendizado contínuo
+
+---
+
+## Por que comunidades funcionam tão bem no aprendizado em dados
+
+- Aprender em público acelera o processo
+
+- Feedback real de pessoas que enfrentam os mesmos problemas
+
+- Exposição a abordagens diferentes do que você conhece
+
+- Conexões que não acontecem em cursos convencionais
+
+---
+
+## O valor prático de uma comunidade na carreira
+
+- Acesso a projetos reais antes de ter experiência formal
+
+- Visibilidade para quem está contratando
+
+- Aprendizado contínuo sem custo financeiro
+
+- Rede de pessoas dispostas a ajudar
+
+---
+
+## TidyTuesday: como descobrir
+
+O TidyTuesday é uma iniciativa semanal da comunidade de R criada e mantida por **Jon Harmon** e colaboradores da **Data Science Learning Community**.
+
+Todo ano começa e termina com um dataset especial. O restante do ano tem um dataset novo por semana.
+
+Repositório oficial:
+[github.com/rfordatascience/tidytuesday](https://github.com/rfordatascience/tidytuesday)
+
+---
+
+## TidyTuesday: estrutura prática
+
+::: columns
+::: {.column width="50%"}
+**Como funciona:**
+
+- Dataset novo toda semana
+- Tema variado: saúde, clima, cultura, esporte, economia
+- Sem resposta certa. A análise é livre
+- Compartilhamento público no GitHub e redes sociais
+:::
+
+::: {.column width="50%"}
+**Como participar:**
+
+- Acesse o repositório e baixe o dataset da semana
+- Faça sua análise em R ou Python
+- Compartilhe no GitHub com o código
+- Use a hashtag `#TidyTuesday` no LinkedIn e no Mastodon
+:::
+:::
+
+---
+
+## O que muda quando você participa de desafios
+
+- Você aprende a trabalhar com dados que não escolheu
+- Desenvolve velocidade de análise
+- Cria o hábito de documentar e publicar
+- Ganha repertório visual com as soluções de outras pessoas
+
+::: {.callout-tip}
+Participar de um desafio por semana por três meses é mais formativo do que assistir a horas de curso sem praticar.
+:::
+
+---
+
+## Estudar sozinho x aprender com comunidade
+
+| Dimensão | Sozinho | Com comunidade |
+|---|---|---|
+| Feedback | Nenhum ou atrasado | Imediato e diverso |
+| Repertório | Limitado ao que você busca | Expandido pelo que outros trazem |
+| Visibilidade | Zero | Crescente |
+| Motivação | Depende de você | Sustentada pelo grupo |
+
+---
+
+## Importância de disponibilizar seus projetos e datasets
+
+- Código publicado é portfólio
+- Dataset organizado e documentado é contribuição real
+- O processo público é tão valioso quanto o resultado
+- Outros aprendem com seus erros tanto quanto com seus acertos
+
+---
+
+# Bloco 3 {.center background-color="#d8b5d0"}
+
+## Ferramentas e prática
+
+---
+
+## TidyTuesday como ferramenta de evolução prática
+
+O TidyTuesday não é só um desafio. É um treino semanal com dados reais, sem pressão de entrega e com audiência real.
+
+O que você desenvolve ao longo do tempo:
+
+- Velocidade de limpeza e manipulação de dados
+- Repertório de tipos de gráficos e quando usá-los
+- Hábito de documentar decisões analíticas
+- Portfólio público com histórico de evolução visível
+
+---
+
+## Outros desafios e plataformas
+
+- **#30DayChartChallenge:** um gráfico por dia durante 30 dias em abril. Tema diferente a cada dia.
+
+- **#30DayMapChallenge:** variação focada em mapas durante novembro.
+
+- **Makeover Monday:** reformular visualizações existentes com dados reais.
+
+- **Observable Plot Gallery:** exploração livre com a biblioteca Observable.
+
+---
+
+## R e Python no contexto de visualização
+
+::: columns
+::: {.column width="50%"}
+**R**
+
+- `ggplot2`: padrão de mercado para visualização estática
+- `plotly`: interatividade com sintaxe familiar
+- `gganimate`: animações sobre gráficos ggplot2
+- `ggridges`, `ggbeeswarm`, `ggdist`: extensões especializadas
+- Quarto para publicação integrada
+:::
+
+::: {.column width="50%"}
+**Python**
+
+- `matplotlib`: base de tudo, altamente configurável
+- `seaborn`: API de alto nível sobre matplotlib
+- `plotly`: interatividade e dashboards
+- `altair`: gramática declarativa de visualização
+- `bokeh`: visualizações interativas para web
+:::
+:::
+
+---
+
+## Ferramentas mais utilizadas no dia a dia
+
+- **ggplot2:** análise exploratória e comunicação final
+- **Quarto:** documento + código + visualização publicados juntos
+- **GitHub:** versionamento e portfólio
+- **Flourish:** visualizações interativas sem código
+- **Datawrapper:** gráficos e mapas para publicação rápida
+- **R Graph Gallery:** referência de código por tipo de gráfico
+
+---
+
+## Como sair do básico e evoluir na prática
+
+Três movimentos que mudam o nível:
+
+1. **Copiar com consciência:** reproduzir o código de quem você admira e entender cada linha
+2. **Publicar antes de estar pronto:** o feedback real acelera mais do que a revisão solitária
+3. **Documentar as decisões:** escrever por que você escolheu aquele gráfico ensina mais do que fazer o gráfico
+
+---
+
+# Bloco 4 {.center background-color="#d8b5d0"}
+
+## Profissionais e referências
+
+---
+
+## Profissionais que são referência na área
+
+- **Cédric Scherer:** data visualization designer, referência em ggplot2 avançado
+  [cedricscherer.com](https://www.cedricscherer.com)
+
+- **Georgios Karamanis:** TidyTuesday e visualizações incomuns
+  [github.com/gkaramanis](https://github.com/gkaramanis)
+
+- **Cara Thompson:** dados e design aplicados a comunicação
+  [cararthompson.com](https://www.cararthompson.com)
+
+- **Nicola Rennie:** TidyTuesday, Shiny e Quarto
+  [nrennie.rbind.io](https://nrennie.rbind.io)
+
+---
+
+## Mais referências para acompanhar
+
+- **Tanya Shapiro:** visualizações detalhadas com ggplot2 e R
+  [github.com/tashapiro](https://github.com/tashapiro)
+
+- **Albert Rapp:** tutoriais de ggplot2 e Quarto com profundidade técnica
+  [albert-rapp.de](https://albert-rapp.de)
+
+- **Yan Holtz:** criador do R Graph Gallery e Python Graph Gallery
+  [yan-holtz.com](https://yan-holtz.com)
+
+- **Nathan Yau:** FlowingData, jornalismo de dados e visualização aplicada
+  [flowingdata.com](https://flowingdata.com)
+
+---
+
+## Como construir repertório visual
+
+- Salvar não adianta. Reproduzir sim.
+
+- Reserve tempo semanal para recriar uma visualização que você admira
+
+- Anote o que funcionou, o que você mudaria e por que
+
+- Repositórios de referência:
+
+  - [r-graph-gallery.com](https://r-graph-gallery.com)
+  - [dataviz-inspiration.com](https://www.dataviz-inspiration.com)
+  - [100.datavizproject.com](https://100.datavizproject.com)
+
+---
+
+# Bloco 5 {.center background-color="#d8b5d0"}
+
+## Construção prática de visualizações
+
+---
+
+## Como começar hoje
+
+Não comece pelo gráfico. Comece pela pergunta.
+
+1. **Qual é a pergunta que você quer responder?**
+2. **Qual variável responde essa pergunta?**
+3. **Quantas dimensões estão envolvidas?**
+4. **Qual tipo de gráfico comunica melhor essa relação?**
+5. **Quem vai ler esse gráfico?**
+
+::: {.callout-important}
+Um gráfico tecnicamente correto que não comunica para o público certo é um gráfico que falhou.
+:::
+
+---
+
+## Escolha de ferramentas: ggplot2 no R
+
+A gramática de gráficos do ggplot2 é baseada em camadas:
+
+```r
+library(ggplot2)
+
+ggplot(dados, aes(x = variavel_x, y = variavel_y)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(
+    title    = "Título informativo",
+    subtitle = "Contexto adicional",
+    x        = "Rótulo do eixo x",
+    y        = "Rótulo do eixo y",
+    caption  = "Fonte dos dados") +
+  theme_minimal()
+```
+
+---
+
+## Separar análise de visualização
+
+::: columns
+::: {.column width="50%"}
+**Análise exploratória**
+
+- Gráficos rápidos e sujos
+- Objetivo: entender os dados
+- Não precisa ser bonito
+- `plot()`, `hist()`, `ggplot()` básico
+- Resultado: insight
+:::
+
+::: {.column width="50%"}
+**Visualização comunicativa**
+
+- Gráficos refinados e documentados
+- Objetivo: comunicar para outra pessoa
+- Cada elemento tem uma razão de existir
+- Tema, paleta, rótulos e fontes deliberados
+- Resultado: decisão ou compreensão
+:::
+:::
+
+---
+
+## Como contar uma história com dados
+
+Uma visualização que conta uma história tem:
+
+- **Contexto:** quem são os dados, de onde vieram, qual o período
+- **Tensão:** o que é surpreendente, contraditório ou relevante
+- **Resolução:** o que os dados indicam e qual é a implicação prática
+
+O título do gráfico não deve descrever o que está representado. Deve comunicar a conclusão.
+
+::: {.callout-tip}
+Título fraco: "Vendas por região em 2023"
+
+Título forte: "Norte concentra 40% das vendas, mas recebe apenas 15% do investimento"
+:::
+
+---
+
+## Publicação: GitHub e LinkedIn
+
+**GitHub:**
+
+- Repositório público com código, dados e README documentado
+- Histórico de commits como registro de evolução
+- Referência que recrutadores e colaboradores consultam
+
+**LinkedIn:**
+
+- Publique o gráfico com a pergunta que ele responde
+- Mostre o processo, não só o resultado final
+- Três parágrafos: contexto, o que os dados mostram, o que isso significa
+
+---
+
+## Importância de mostrar o processo
+
+O resultado final esconde o aprendizado. O processo expõe a competência.
+
+Mostre:
+
+- O dataset bruto antes da limpeza
+- As versões descartadas do gráfico e por que foram descartadas
+- Os erros que ocorreram e como foram resolvidos
+- As decisões de design e a justificativa de cada uma
+
+Quem contrata quer ver como você pensa. Não só o que você entrega.
+
+---
+
+# Bloco 6 {.center background-color="#d8b5d0"}
+
+## Fechamento e direcionamento
+
+---
+
+## Importância de ter um portfólio
+
+Portfólio não é currículo com imagens.
+
+É evidência de como você pensa, resolve problemas e comunica resultados.
+
+Um projeto publicado com uma decisão bem justificada vale mais do que dez projetos guardados esperando o momento certo.
+
+---
+
+## Consistência x perfeição
+
+::: columns
+::: {.column width="50%"}
+**Esperando a perfeição:**
+
+- Ninguém vê
+- Não gera oportunidade
+- Fica desatualizado
+- Aumenta a paralisia
+:::
+
+::: {.column width="50%"}
+**Publicando com consistência:**
+
+- Mostra como você pensa
+- Abre portas concretas
+- Evolui em público
+- Gera conexões e feedback real
+:::
+:::
+
+::: {.callout-important}
+O portfólio que ninguém vê não abre nenhuma porta.
+:::
+
+---
+
+## Próximos passos para quem está começando
+
+1. Escolha um dataset do TidyTuesday desta semana
+2. Faça uma análise exploratória com `ggplot2`
+3. Escolha um gráfico e refine até ele comunicar uma conclusão clara
+4. Publique no GitHub com README documentado
+5. Escreva um post no LinkedIn descrevendo o processo
+
+Não espere estar pronta. O aprendizado acontece publicando.
+
+---
+
+## Convite para participar de comunidades
+
+- **R-Ladies:** [rladies.org](https://rladies.org) | capítulos em todo o Brasil
+- **TidyTuesday:** [github.com/rfordatascience/tidytuesday](https://github.com/rfordatascience/tidytuesday)
+- **Data Science Learning Community:** [dslc.io](https://dslc.io)
+- **Latin R:** conferência latino-americana de R [latinr.org](https://latinr.org)
+
+Comunidade não é bônus. É parte do método.
+
+---
+
+## Mensagem final
+
+Aprender visualização de dados tem dois componentes insubstituíveis:
+
+**Prática:** fazer gráficos toda semana, independente de serem perfeitos.
+
+**Exposição:** publicar o que você faz e receber feedback real.
+
+Nenhum curso substitui os dois juntos.
+
+<br>
+
+**Obrigada, Agatha.**
+
+---
+
+## Referências
+
+- R Graph Gallery: [r-graph-gallery.com](https://r-graph-gallery.com)
+- Python Graph Gallery: [python-graph-gallery.com](https://python-graph-gallery.com)
+- Data to Viz: [data-to-viz.com](https://www.data-to-viz.com)
+- Dataviz Inspiration: [dataviz-inspiration.com](https://www.dataviz-inspiration.com)
+- TidyTuesday: [github.com/rfordatascience/tidytuesday](https://github.com/rfordatascience/tidytuesday)
+- Cédric Scherer: [cedricscherer.com](https://www.cedricscherer.com)
+- Nicola Rennie: [nrennie.rbind.io](https://nrennie.rbind.io)
+- FlowingData: [flowingdata.com](https://flowingdata.com)
