@@ -1,0 +1,544 @@
+---
+title: "Como usar e editar sua apresentação no Quarto"
+subtitle: "Guia prático para quem nunca fez slides no Quarto"
+author: "Jennifer Lopes"
+date: today
+lang: pt
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-title: "Neste guia"
+    toc-location: left
+    smooth-scroll: true
+    embed-resources: true
+    css: estilo_jeni_html.css
+---
+
+---
+
+::: {.destaque-azul}
+Este guia foi criado para quem recebeu uma apresentação feita no Quarto e precisa saber como abrir, editar e apresentar sem ter experiência prévia com a ferramenta.
+:::
+
+---
+
+## O que você precisa instalar {#sec-instalar}
+
+<br>
+
+Antes de qualquer coisa, você precisa de três coisas instaladas no seu computador:
+
+<br>
+
+**1. R**
+
+Baixe em [cran.r-project.org](https://cran.r-project.org). Escolha o seu sistema operacional e instale com as opções padrão.
+
+<br>
+
+**2. RStudio**
+
+Baixe em [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop). É o programa onde você vai abrir e editar a apresentação.
+
+<br>
+
+**3. Quarto**
+
+Baixe em [quarto.org/docs/get-started](https://quarto.org/docs/get-started). Instale com as opções padrão. O Quarto é o que transforma o arquivo de texto em slides.
+
+::: {.callout-tip}
+Se você já tem R e RStudio instalados, verifique as versões. O Quarto funciona melhor com R 4.2 ou superior e RStudio 2023 ou superior.
+:::
+
+---
+
+## O que você vai receber {#sec-arquivos}
+
+<br>
+
+A apresentação é composta por três arquivos que precisam ficar na mesma pasta:
+
+<br>
+
+```
+pasta_da_apresentacao/
+├── slides_dataviz_rladies.qmd   # o arquivo principal com o conteúdo
+├── styles.css                    # o arquivo de cores e estilo visual
+└── logo.png                      # a logo que aparece nos slides
+```
+
+<br>
+
+::: {.callout-important}
+**Os três arquivos precisam estar na mesma pasta.** Se você mover o `.qmd` para outro lugar sem levar o `.css` e o `.png`, o estilo e a logo vão desaparecer.
+:::
+
+---
+
+## Como abrir a apresentação {#sec-abrir}
+
+<br>
+
+**Passo 1:** Abra o RStudio.
+
+<br>
+
+**Passo 2:** Vá em **File > Open File** e navegue até a pasta onde você salvou os arquivos.
+
+<br>
+
+**Passo 3:** Selecione o arquivo com extensão `.qmd` e clique em **Open**.
+
+<br>
+
+**Passo 4:** O arquivo vai abrir no editor do RStudio. Você vai ver o conteúdo em texto com marcações.
+
+<br>
+
+::: {.callout-tip}
+Outra forma: vá até a pasta no seu computador, clique com o botão direito no arquivo `.qmd` e escolha **Abrir com RStudio**, se essa opção aparecer.
+:::
+
+---
+
+## Como gerar os slides {#sec-renderizar}
+
+<br>
+
+Depois de abrir o arquivo no RStudio, você precisa **renderizar** para transformar o texto em slides.
+
+<br>
+
+**Como fazer:**
+
+Clique no botão **Render** que aparece na barra superior do editor, ou pressione:
+
+```
+Ctrl + Shift + K   (Windows)
+Cmd + Shift + K    (Mac)
+```
+
+<br>
+
+O Quarto vai processar o arquivo e abrir os slides no navegador automaticamente.
+
+<br>
+
+::: {.callout-note}
+Na primeira vez que você renderizar, pode demorar alguns segundos a mais porque o Quarto está preparando o ambiente. Nas próximas vezes é mais rápido.
+:::
+
+---
+
+## Como navegar nos slides durante a apresentação {#sec-apresentar}
+
+<br>
+
+Os slides abrem no navegador (Chrome, Firefox, Edge). Para apresentar:
+
+<br>
+
+| Ação | Como fazer |
+|---|---|
+| Próximo slide | Seta para a direita ou espaço |
+| Slide anterior | Seta para a esquerda |
+| Tela cheia | Tecla `F` |
+| Visão geral de todos os slides | Tecla `O` |
+| Modo apresentador (notas) | Tecla `S` |
+| Zoom em um elemento | Tecla `Alt` + clique |
+
+<br>
+
+::: {.callout-tip}
+Para apresentar no projetor, abra os slides no navegador, pressione `F` para tela cheia e espelhe ou estenda a tela normalmente pelo seu sistema operacional.
+:::
+
+---
+
+## Como editar o conteúdo {#sec-editar}
+
+<br>
+
+O arquivo `.qmd` é um arquivo de texto simples com marcações. Você edita diretamente no RStudio como se fosse um documento de Word, mas com uma sintaxe específica.
+
+<br>
+
+### Estrutura básica de um slide
+
+<br>
+
+Cada slide começa com `##` seguido do título:
+
+```markdown
+## Título do slide
+
+Texto do slide aqui.
+
+- Item da lista 1
+- Item da lista 2
+- Item da lista 3
+```
+
+<br>
+
+A linha `---` cria uma separação entre slides sem título.
+
+<br>
+
+### Slide de seção (fundo colorido)
+
+<br>
+
+Os slides de abertura de bloco usam `#` com uma classe:
+
+```markdown
+# Nome da seção {.center background-color="#d8b5d0"}
+```
+
+Troque o código de cor para mudar a cor de fundo.
+
+---
+
+## Como editar texto {#sec-texto}
+
+<br>
+
+A sintaxe de texto é simples:
+
+<br>
+
+| O que você quer | Como escrever |
+|---|---|
+| **Negrito** | `**texto em negrito**` |
+| *Itálico* | `*texto em itálico*` |
+| `Código inline` | `` `nome_do_pacote` `` |
+| Link | `[texto do link](https://url.com)` |
+| Linha separadora | `---` |
+| Espaço extra | `<br>` |
+
+<br>
+
+**Exemplo:**
+
+```markdown
+O pacote **`ggplot2`** é o padrão para visualização em R.
+
+Acesse a documentação em [ggplot2.tidyverse.org](https://ggplot2.tidyverse.org).
+```
+
+---
+
+## Como editar listas {#sec-listas}
+
+<br>
+
+**Lista com marcadores:**
+
+```markdown
+- Primeiro item
+- Segundo item
+- Terceiro item
+```
+
+<br>
+
+**Lista numerada:**
+
+```markdown
+1. Primeiro passo
+2. Segundo passo
+3. Terceiro passo
+```
+
+<br>
+
+**Lista com subitens:**
+
+```markdown
+- Item principal
+  - Subitem 1
+  - Subitem 2
+```
+
+::: {.callout-note}
+O recuo dos subitens precisa ser de dois espaços. Se não aparecer como subitem, verifique o espaçamento.
+:::
+
+---
+
+## Como editar tabelas {#sec-tabelas}
+
+<br>
+
+Tabelas são criadas com `|` para separar colunas e `---` para separar o cabeçalho:
+
+<br>
+
+```markdown
+| Coluna 1 | Coluna 2 | Coluna 3 |
+|---|---|---|
+| Linha 1A | Linha 1B | Linha 1C |
+| Linha 2A | Linha 2B | Linha 2C |
+```
+
+<br>
+
+O resultado:
+
+| Coluna 1 | Coluna 2 | Coluna 3 |
+|---|---|---|
+| Linha 1A | Linha 1B | Linha 1C |
+| Linha 2A | Linha 2B | Linha 2C |
+
+---
+
+## Como criar slides com duas colunas {#sec-colunas}
+
+<br>
+
+Para colocar conteúdo lado a lado:
+
+<br>
+
+```markdown
+::: columns
+::: {.column width="50%"}
+Conteúdo da coluna esquerda aqui.
+
+- Item 1
+- Item 2
+:::
+
+::: {.column width="50%"}
+Conteúdo da coluna direita aqui.
+
+- Item A
+- Item B
+:::
+:::
+```
+
+<br>
+
+Você pode ajustar as porcentagens: `40%` e `60%`, por exemplo. As duas precisam somar 100%.
+
+---
+
+## Como adicionar blocos de destaque {#sec-callouts}
+
+<br>
+
+Os blocos coloridos de dica, nota e atenção se chamam **callouts**:
+
+<br>
+
+```markdown
+::: {.callout-tip}
+Texto de dica aqui.
+:::
+
+::: {.callout-note}
+Texto de nota informativa aqui.
+:::
+
+::: {.callout-important}
+Texto de atenção importante aqui.
+:::
+
+::: {.callout-warning}
+Texto de aviso aqui.
+:::
+```
+
+---
+
+## Como adicionar um slide novo {#sec-novo-slide}
+
+<br>
+
+Para adicionar um slide novo em qualquer posição:
+
+<br>
+
+1. Encontre o ponto no arquivo onde quer inserir o slide
+2. Adicione `---` para separar do slide anterior
+3. Escreva `## Título do novo slide`
+4. Adicione o conteúdo
+
+<br>
+
+```markdown
+---
+
+## Meu novo slide
+
+- Primeiro ponto
+- Segundo ponto
+- Terceiro ponto
+```
+
+<br>
+
+::: {.callout-tip}
+Para adicionar no meio da apresentação, localize o slide anterior e o posterior no arquivo e cole o novo conteúdo entre eles. O Quarto vai respeitará a ordem do arquivo.
+:::
+
+---
+
+## Como remover um slide {#sec-remover}
+
+<br>
+
+Para remover um slide:
+
+<br>
+
+1. Localize o slide no arquivo pelo título (`## Título`)
+2. Selecione todo o conteúdo do slide: do `##` até o próximo `---`
+3. Delete o trecho selecionado
+4. Renderize novamente para confirmar
+
+<br>
+
+::: {.callout-warning}
+Não delete a linha `---` que separa o slide removido do próximo. Se deletar, os dois slides vão se unir em um só.
+:::
+
+---
+
+## Como trocar a logo {#sec-logo}
+
+<br>
+
+A logo é referenciada no YAML no topo do arquivo:
+
+```yaml
+logo: logo.png
+```
+
+<br>
+
+Para trocar:
+
+1. Salve a nova logo na mesma pasta com o nome `logo.png`
+2. Renderize novamente
+
+<br>
+
+Se quiser usar um nome diferente, troque no YAML:
+
+```yaml
+logo: minha_logo.png
+```
+
+---
+
+## Como trocar o rodapé {#sec-rodape}
+
+<br>
+
+O rodapé aparece em todos os slides. Ele está definido no YAML:
+
+```yaml
+footer: "R-Ladies | Visualização de Dados na Prática"
+```
+
+<br>
+
+Para trocar, edite o texto entre aspas e renderize novamente.
+
+---
+
+## Como trocar as cores {#sec-cores}
+
+<br>
+
+As cores estão definidas no arquivo `styles.css`. Abra esse arquivo no RStudio e localize as variáveis no topo:
+
+<br>
+
+```css
+:root {
+  --rladies-purple: #b048a2;
+  --rladies-purple-light: #d8b5d0;
+  --rladies-purple-dark: #88398a;
+  --rladies-gray: #333333;
+}
+```
+
+<br>
+
+Troque os códigos hexadecimais pelas cores que você quer. Para encontrar o código de uma cor, use [htmlcolorcodes.com](https://htmlcolorcodes.com).
+
+<br>
+
+::: {.callout-note}
+Troque apenas os códigos dentro das aspas. Não altere os nomes das variáveis como `--rladies-purple`.
+:::
+
+---
+
+## Erros comuns e como resolver {#sec-erros}
+
+<br>
+
+**O slide não apareceu depois de editar:**
+
+Verifique se você esqueceu de colocar `##` antes do título. Sem os dois `#`, o Quarto não reconhece como um novo slide.
+
+<br>
+
+**O estilo sumiu:**
+
+O arquivo `styles.css` não está na mesma pasta que o `.qmd`. Mova os arquivos para ficarem juntos.
+
+<br>
+
+**A logo não aparece:**
+
+O arquivo `logo.png` não está na mesma pasta. Verifique o nome exato do arquivo, incluindo a extensão.
+
+<br>
+
+**Apareceu uma mensagem de erro ao renderizar:**
+
+Leia a mensagem no painel **Background Jobs** ou **Console** do RStudio. Na maioria dos casos, ela indica a linha onde está o problema.
+
+---
+
+## Resumo rápido {#sec-resumo}
+
+<br>
+
+::: {.destaque}
+**Para usar a apresentação:**
+
+1. Instale R, RStudio e Quarto
+2. Mantenha os três arquivos na mesma pasta
+3. Abra o `.qmd` no RStudio
+4. Clique em **Render** ou pressione `Ctrl + Shift + K`
+5. Os slides abrem no navegador
+6. Pressione `F` para tela cheia e apresente
+:::
+
+<br>
+
+::: {.destaque-azul}
+**Para editar:**
+
+- Texto: edite diretamente no arquivo `.qmd`
+- Novo slide: adicione `---` e `## Título`
+- Cores: edite o arquivo `styles.css`
+- Logo: substitua o arquivo `logo.png`
+- Rodapé: edite o YAML no topo do arquivo
+:::
+
+---
+
+::: {.rodape-newsletter}
+**Jennifer Lopes | Consultoria, Mentoria e Treinamentos**
+
+[jenniferlopesconsultoriamentoria.netlify.app](https://jenniferlopesconsultoriamentoria.netlify.app)
+:::
